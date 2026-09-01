@@ -15,19 +15,19 @@ In Safe Simulator menu theres option to sell all your fake non-favourite skins o
 This mod is essentially a skin unlocker slapped on top of Safe Opening Simulator made by NANI SORE on ModWorkshop.
 
 The skins are saved in json file in saves. Required SuperBLT. If your skins dont show up, simply go to hooks/blackmarket_manage.lua and 
-
+```
 function BlackMarketManager:tradable_update()
 	--self:offshore_poc_save_json()
 	--self:offshore_poc_resync_tradable()
 	return
 end
-
+```
 and uncomment both lines. It should resync your fake skin json database with your steam inventory tradable.
 
 To remove the fake skins from your savefile: simply delete the mod. You can make backups of your fake skin database to reinstate them if needed.
 
 To edit the safe costs and skin selling values, go to blackmarket_manager.lua and edit
-
+```
 local safe_cost = 1000000
 local OFFSHORE_POC_SELL_BONUS_MULT = 1.25
 local OFFSHORE_POC_SELL_RARITY_MULT = {
@@ -44,5 +44,5 @@ local OFFSHORE_POC_SELL_CONDITION_MULT = {
 	fine = 1.4,
 	mint = 1.75
 }
-
+```
 on the very top of the file. The value of the skin is safe_cost * rarity multiplier * condition multiplier and if the skin has bonuses attached you get addition 1.25x multiplier. 
